@@ -4,7 +4,7 @@ OpenCompose is a proposed standardised format that allows developers to simple d
 
 ## Contributing
 
-Please refer the [CONTRIBUTING.asc](https://github.com/redhat-developer/opencompose/blob/master/CONTRIBUTING.asc) document.
+Please refer the [CONTRIBUTING.asc](CONTRIBUTING.asc) document.
 
 ## Resources
 
@@ -17,6 +17,6 @@ to specification.
 
 
 ## Miscellaneous
-The spec and more related documents in this repository are in http://asciidoctor.org[asciidoc] format. It helps if you have some kind of tooling install that helps understands and renders asciidoc nicely.
+The spec and more related documents in this repository are in [AsciiDoc](http://asciidoctor.org) format. It helps if you have some kind of tooling install that helps understands and renders asciidoc nicely.
 
 * [Chrome Extension](https://github.com/asciidoctor/asciidoctor-chrome-extension)
