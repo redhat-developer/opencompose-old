@@ -19,4 +19,4 @@ to specification.
 ## Miscellaneous
 The spec and more related documents in this repository are in http://asciidoctor.org[asciidoc] format. It helps if you have some kind of tooling install that helps understands and renders asciidoc nicely.
 
-* [Chrome Extension] (https://github.com/asciidoctor/asciidoctor-chrome-extension)
+* [Chrome Extension](https://github.com/asciidoctor/asciidoctor-chrome-extension)
