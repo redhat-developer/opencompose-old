@@ -1,0 +1,23 @@
+version: "0.2"
+
+services:
+  frontend:
+    image: frontend-app:v1.0.1
+    volumes:
+      - dataVolume:/var/data         # named volume persistent data
+      - staticPages:/var/www/assets  # named volume can be reused
+
+  backend:
+    image: backend-app:v1.0.1
+    volumes:
+      - dataVolume:/app
+      - /tmp/tmpdata                 # ephemeral, lasts until container's life
+
+volumes:
+  dataVolume:
+    size: "1Gi"
+    mode: ReadWriteMany
+  staticPages:
+    size: "5Gi"
+    mode: ReadOnlyMany
+
