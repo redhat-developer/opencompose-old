@@ -2,7 +2,7 @@
 
 OpenCompose is a proposed standardised format that allows developers to simple describe how a (sub)set of their services are orchestrated using containers.
 
-Read the spec in the docs folder.
+Read the current version of [OpenCompose specification](docs/opencompose-specification.asc) in the docs folder.
 
 ## Contributing
 
