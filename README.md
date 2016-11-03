@@ -1,6 +1,8 @@
-# opencompose
+# OpenCompose
 
 OpenCompose is a proposed standardised format that allows developers to simple describe how a (sub)set of their services are orchestrated using containers.
+
+Read the spec in the docs folder.
 
 ## Contributing
 
