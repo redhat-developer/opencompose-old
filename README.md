@@ -2,7 +2,9 @@
 
 OpenCompose is a proposed standardised format that allows developers to simple describe how a (sub)set of their services are orchestrated using containers.
 
-Read the current version of [OpenCompose specification](docs/opencompose-specification.asc) in the docs folder.
+Read the current version of [OpenCompose specification](docs/opencompose-specification.asc) in the docs folder. Some [examples](examples) should help understand the specification.
+
+A PoC implementation of OpenCompose for Kubernetes and OpenShift can be found [here](https://github.com/pradeepto/kompose/tree/opencompose)
 
 ## Resources
 

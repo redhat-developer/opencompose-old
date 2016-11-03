@@ -1,0 +1,35 @@
+version: "0.2"
+
+services:
+    frontend:
+        image: docker.io/surajd/frontend:v1
+        ports:
+            - 8080:8080
+        type: external
+
+    backend:
+        image: docker.io/surajd/backend:v1
+        ports:
+            - 3000:3000
+        environment:
+            MONGODB_PASSWORD: pass
+            MONGODB_USER: user
+            MONGODB_DATABASE: db
+            MONGODB_SERVER: mongodb:27017
+
+    mongodb:
+        image: tomaskral/mongodb-centos7
+        ports:
+            - 27017:27017
+        volumes:
+            - db-store:/var/lib/mongodb/data
+        environment:
+            MONGODB_PASSWORD: pass
+            MONGODB_USER: user
+            MONGODB_DATABASE: db
+            MONGODB_ADMIN_PASSWORD: root
+
+volumes:
+    db-store:
+        size: "2Gi"
+        mode: ReadWriteOnce
