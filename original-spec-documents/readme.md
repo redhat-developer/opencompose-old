@@ -1,0 +1,1 @@
+These are few original documents on OpenCompose when the idea was concieved that are kept here for posterity.
