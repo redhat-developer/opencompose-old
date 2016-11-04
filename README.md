@@ -6,6 +6,10 @@ Read the current version of [OpenCompose specification](docs/opencompose-specifi
 
 A PoC implementation of OpenCompose for Kubernetes and OpenShift can be found [here](https://github.com/pradeepto/kompose/tree/opencompose)
 
+## Asciinema of OpenCompose implementation
+[![asciicast](https://asciinema.org/a/7f7dw37n37m5kfn7v9uh1pn1w.png)](https://asciinema.org/a/7f7dw37n37m5kfn7v9uh1pn1w)
+
+
 ## Resources
 
 Read more about OpenCompose and its history [here](original-spec-documents).
