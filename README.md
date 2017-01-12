@@ -1,18 +1,62 @@
 # OpenCompose
 
-OpenCompose is a proposed standardised format that allows developers to simple describe how a (sub)set of their services are orchestrated using containers.
+OpenCompose is an open standardised format for defining multi-container applications. Using a `.yaml` defined file, you create and start all your required services in one run command. This allows developers describe a set of services orchestrated via containers. OpenCompose is an alternative to [Docker Compose](https://github.com/docker/compose) with an open governance of the specification.
 
-Read the current version of [OpenCompose specification](docs/opencompose-specification.asc) in the docs folder. Some [examples](examples) should help understand the specification.
+## Examples
 
-A PoC implementation of OpenCompose for Kubernetes and OpenShift can be found [here](https://github.com/pradeepto/kompose/tree/opencompose)
+An example of a complete application utilizing the specification is shown here:
 
-## Asciinema of OpenCompose implementation
+```yaml
+version: "0.2"
+
+services:
+    frontend:
+        image: docker.io/surajd/frontend:v1
+        ports:
+            - 8080:8080
+        type: external
+
+    backend:
+        image: docker.io/surajd/backend:v1
+        ports:
+            - 3000:3000
+        environment:
+            MONGODB_PASSWORD: pass
+            MONGODB_USER: user
+            MONGODB_DATABASE: db
+            MONGODB_SERVER: mongodb:27017
+
+    mongodb:
+        image: tomaskral/mongodb-centos7
+        ports:
+            - 27017:27017
+        volumes:
+            - db-store:/var/lib/mongodb/data
+        environment:
+            MONGODB_PASSWORD: pass
+            MONGODB_USER: user
+            MONGODB_DATABASE: db
+            MONGODB_ADMIN_PASSWORD: root
+
+volumes:
+    db-store:
+        size: "2Gi"
+        mode: ReadWriteOnce
+```
+
+## Specification
+
+The current version of OpenCompose is __0.1__. 
+
+We aim to keep the specification simple and understandable. The current version of the spec is provided in the [SPECIFICATION.asc](SPECIFICATION.asc) file.
+
+## Proof-Of-Concept / CLI implementation
+
+The Proof-of-Concept for the OpenCompose is based on a fork of [Kompose](https://github.com/kubernetes-incubator/kompose).
+
+The code as well as instructions on how to use this tool can be found at [github.com/pradeepto/kompose/tree/opencompose](https://github.com/pradeepto/kompose/tree/opencompose).
+
 [![asciicast](https://asciinema.org/a/7f7dw37n37m5kfn7v9uh1pn1w.png)](https://asciinema.org/a/7f7dw37n37m5kfn7v9uh1pn1w)
-
-
-## Resources
-
-Read more about OpenCompose and its history [here](original-spec-documents).
 
 ## Contributing
 
